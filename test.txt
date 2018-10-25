@@ -1,4 +1,4 @@
 [my-config]
 DRIVER_PATH = D:\Apps\selenium_drivers\chromedriver.exe
-BROWSER_PROFILE = D:\selenium\chrome\perfildeprueba
+BROWSER_PROFILE = D:\selenium\chrome\Profile1
 URL = https://web.whatsapp.com/

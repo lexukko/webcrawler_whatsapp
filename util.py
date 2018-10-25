@@ -1,7 +1,7 @@
 import sys
 import json
 import codecs
-import ConfigParser
+import configparser
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
@@ -58,7 +58,7 @@ Carga datos de archivo de configuracion
 def load_settings(config_file, section_name):
     try:
         settings = None
-        config_parser = ConfigParser.RawConfigParser()
+        config_parser = configparser.RawConfigParser()
         config_file_path = config_file
         config_parser.read(config_file_path)
 
