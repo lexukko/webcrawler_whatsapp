@@ -2,6 +2,7 @@ import sys
 import json
 import codecs
 import configparser
+import time
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
@@ -100,7 +101,6 @@ def load_WhatsApp(browser,settings,page_timeout):
     try:
         success = False
         browser.get(settings['url'])
-        EC.text_to_be_present_in_element
         WebDriverWait(browser, page_timeout).until(EC.visibility_of_element_located((By.XPATH, XPATH_WHATSAPP_READY)))
         success = True
     except TimeoutException:
@@ -135,7 +135,8 @@ def activate_WhatsApp_Contact_Chat(browser, page_timeout, contact):
     try:
         success = False
         contact['element'].click()
-        WebDriverWait(browser, page_timeout).until(EC.text_to_be_present_in_element((By.XPATH, XPATH_WHATSAPP_CHAT_TEXT), contact['name']))
+        time.sleep(3)
+        #WebDriverWait(browser, page_timeout).until(EC.text_to_be_present_in_element((By.XPATH, XPATH_WHATSAPP_CHAT_TEXT), contact['name']))
         success = True
     except TimeoutException:
         print ("activate_WhatsApp_Contact_Chat error:", sys.exc_info()[0])
